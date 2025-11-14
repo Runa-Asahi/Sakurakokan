@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
 int main() {
+    cout<<"This is a test for Sakurakokan project."<<endl;
+    cout<<"That is really difficult but meaningful."<<endl;
     cout << "Hello, Sakurakokan test!" << endl;
     return 0;
 }
