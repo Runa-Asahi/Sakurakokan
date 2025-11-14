@@ -1,8 +1,10 @@
 #include <iostream>
 using namespace std;
 int main() {
+    cout << "Hello, Sakurakokan test!" << endl;
     cout<<"This is a test for Sakurakokan project."<<endl;
     cout<<"That is really difficult but meaningful."<<endl;
-    cout << "Hello, Sakurakokan test!" << endl;
+    cout<<"I will try my best to complete it!"<<endl;
+    cout<<"Hello github!"<<endl;
     return 0;
 }
