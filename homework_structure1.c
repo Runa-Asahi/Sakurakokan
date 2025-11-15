@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdbool.h>//C语言标准库
-const int N = 20;
-const int S = 100;
+#define N 20
+#define S 100
 char name[N][N];
 int score[S];
 bool isqualified(int sc){
