@@ -1,14 +1,15 @@
 #include <stdio.h>
 
-int combination(int m,int n){
+long long combination(int m,int n){
     if(n<0) return 0;
     else if(n==0) return 1;
     else if(n==1) return m;
+    else if(n==m) return 1;
     else if(m<2*n){
-        return combination(m-n,n);
+        return (long long)combination(m,m-n);
     }
     else if(m>=2*n){
-        return combination(m-1,n-1)*(m-2*n)/n;
+        return (long long)combination(m-1,n-1)*m/n;
     }
     return -1;
 }
@@ -16,7 +17,7 @@ int combination(int m,int n){
 int main(){
     int m,n;
     scanf("%d %d",&m,&n);
-    int res = combination(m,n);
-    printf("%d\n",res);
+    long long res = combination(m,n);
+    printf("%lld\n",res);
     return 0;
 }
