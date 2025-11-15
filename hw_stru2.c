@@ -14,7 +14,7 @@ int main(){
         students[i].sumscore = students[i].score1 + students[i].score2;
     }
     for(int i=1;i<=n;i++){
-        printf("%s %d\n",students[i].name,students[i].sumscore);
+        printf("%s %d ",students[i].name,students[i].sumscore);
     }
     return 0;
 }
