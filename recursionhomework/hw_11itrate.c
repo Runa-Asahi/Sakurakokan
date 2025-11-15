@@ -1,30 +1,14 @@
 #include <stdio.h>
 #define N 105
+char arr[N];
 
-// 递归函数计算字符串长度
-int stringLength(char *str) {
-    if (*str == '\0') {
-        return 0;
-    } else {
-        return 1 + stringLength(str + 1);
-    }
-}
-
-int main() {
-    char arr[N];
-    int i = 0;
-    
-    // 读取字符串，包括空格
-    char tmp;
-    while ((tmp = getchar()) != '\n' && i < N - 1) {
-        arr[i] = tmp;
+int main(){ 
+    int tmp;//注意这里要用int类型来接收getchar()的返回值，以便正确判断EOF
+    int i=0;
+    while((tmp=getchar())!=EOF&&i<N-1){//注意这里要留一个位置给字符串结束符'\0'
+        arr[i]=(char)tmp;//注意这里要强制转换为char类型，否则在某些编译器下会报错
         i++;
     }
-    arr[i] = '\0';  // 添加字符串结束符
-    
-    // 使用递归函数计算长度
-    int cnt = stringLength(arr);
-    printf("%d", cnt);
-    
+    printf("%d\n",i);
     return 0;
 }

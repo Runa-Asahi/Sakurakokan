@@ -5,7 +5,7 @@ int res=0;
  
 int ismax(vector <int> arr,int index,int n){
     if(res<arr[index]) res = arr[index];
-    if(index>n-1) return res;
+    if(index>=n-1) return res;
     else return ismax(arr,index+1,n);
 }
 
