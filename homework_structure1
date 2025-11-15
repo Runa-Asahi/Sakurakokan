@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdbool.h>//C语言标准库
+const int N = 20;
+const int S = 100;
+char name[N][N];
+int score[S];
+bool isqualified(int sc){
+    return sc >= 60;//60分及格
+}
+int main(){
+    int n;
+    scanf("%d", &n);
+    for(int i = 1; i <= n; i++){
+        scanf("%s %d", name[i], &score[i]);//  输入学生姓名和分数
+    }
+    for(int i=1;i<=n;i++){
+        if(!isqualified(score[i])){
+            printf("%s %d ",name[i],score[i]);//输出不及格的学生姓名和分数
+        }
+    }
+    return 0;
+}
