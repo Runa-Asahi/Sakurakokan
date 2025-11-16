@@ -16,8 +16,8 @@ char *gets(char *s);
    - gets(str)允许输入的字符串有空格
    - scanf("%s",str)不允许含有空格
    - scanf()和gets()无法知道字符串s大小，因此容易导致字符数组越界
-  <br>
-  2. #### fgets()
+
+1. #### fgets()
 ```c
 #include <stdio.h>
 char *fgets(char *s,int size,FILE *stream);    
@@ -33,7 +33,7 @@ char *fgets(char *s,int size,FILE *stream);
   读到文件结尾或出错：NULL
 - fgets()在读取用户通过键盘输入的字符串的时候，同时把用户输入的回车也作为字符串的一部分。==通过scanf和gets输入一个字符串的时候，不包含结尾的'\n'，但通过fgets结尾多了'\n'。==fgets()函数是安全的，不存在缓冲区溢出的问题
   <br>
-3. puts()
+1. puts()
    ```c
    #include <stdio.h>
    int puts(const char *s);
