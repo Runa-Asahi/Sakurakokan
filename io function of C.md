@@ -129,7 +129,7 @@ int strncmp(const char *s1, const char *s2, size_t n);
 12.  #### strchr()
 ```c
 #include <string.h>
-char *strchr(cinst char *s, int c);
+char *strchr(const char *s, int c);
 ```
 - 功能
 在字符串s中查找字符s出现的位置
