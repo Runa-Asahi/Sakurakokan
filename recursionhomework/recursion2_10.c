@@ -1,20 +1,27 @@
 #include <stdio.h>
 
-char* turn(int N, int b){
-    for(int i=0;;i++){
-        if(pow(b,i)<=N && pow(b,i+1)>=N){
-            int tmp = pow(b,i+1)-N;
-            char* res = turn(tmp,b);
-            
-        }
+char arr[]={"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"};
+char res[36];
+char* decimal(int n,int tar){
+    int index = 0;
+    while(n!=0){  
+        res[index] = arr[n%tar];
+        index++;
+        n /= tar;
     }
-    
+    res[index] = '\0';
+    for(int i=0;i<index/2;i++){
+        char tmp = res[i];
+        res[i] = res[index-1-i];
+        res[index-1-i] = tmp;
+    }
+    return &res[0];
 }
 
 int main(){
-    int N,b;
-    scanf("%d %d",&N,&b);
-    int res=0;
-
+    int n,target;
+    scanf("%d %d",&n,&target);
+    char* res = decimal(n,target);
+    printf("%s\n",res);
     return 0;
 }
