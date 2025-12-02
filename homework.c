@@ -5,12 +5,7 @@ typedef struct Node {
     struct Node* next;
 }Node;
 struct Node* head;
-void headinsert(int x){
-    Node* temp = (Node*)malloc(sizeof(Node));
-    (*temp).data = x;
-    (*temp).next = head;
-    head = temp;
-}
+
 void insert(int data,int n){
     Node* temp1 = (Node*)malloc(sizeof(Node));
     (*temp1).data = data;
@@ -27,6 +22,20 @@ void insert(int data,int n){
     (*temp1).next = (*temp2).next;
     (*temp2).next = temp1;
 }
+void delete(int n){
+    Node* temp1 = head;
+    if(n == 1){
+        head = (*temp1).next;
+        free(temp1);
+        return;
+    }
+    for(int i=0;i<n-2;i++){
+        temp1 = (*temp1).next;
+    }
+    Node* temp2 = (*temp1).next;
+    (*temp1).next = (*temp2).next;
+    free(temp2);
+}
 void Print(){
     Node* temp = head;
     while(temp!=NULL){
@@ -37,11 +46,12 @@ void Print(){
     printf("\n");
 }
 int main(){
-    head = NULL;
+    head = NULL;int index = 1;
     while(1){
         int tmp;scanf("%d",&tmp);
         if(tmp == 0) break;
-        insert(tmp); 
+        insert(tmp,index); 
+        index++;
     }
     Print();
 }
