@@ -1,50 +1,24 @@
-#include <stdio.h>
-#include <malloc.h>
-struct link{
-    int n;
-    struct link* next = NULL;
-};
-struct link* build(){
-    struct link* head=NULL,*tail=NULL;
-    while(1){
-        int t;scanf("%d",&t);
-        if(t==0) break;
-        struct link* Node = (struct link*)malloc(sizeof(struct link));
-        Node->n = t;
-        if(head==NULL){
-            head = Node;tail = Node;
+#include <bits/stdc++.h>
+using namespace std;
+int n,k;int ans[10];
+void dfs(int depth){
+    if(depth>n){
+        for(int i=1;i<=n;i++){
+            if(i<n) cout<<ans[i]<<" ";
+            else cout<<ans[i];
         }
-        else {
-            tail->next  = Node;
-            tail = tail->next;
-            tail->next = NULL;
-        }        
+        cout<<"\n";
+        return;
     }
-    return head;
-}
-void print(struct link* head){
-    struct link* tmp=head;
-    while(tmp!=NULL){
-        printf("%d",tmp->n);
-        tmp = tmp->next;
-        if (tmp != NULL) printf(" ");
+    for(int i=1;i<=k;i++){
+        ans[depth]=i;
+        dfs(depth+1);
+        ans[depth]=0;
     }
 }
-void release(struct link* head){
-    struct link* tmp;
-    while(head!=NULL){
-        tmp = head;
-        head = head->next;
-        free(tmp);
-    }
-}
-int main(){
-    struct link* head;
-    head = build();
-    if(head!=NULL)
-    print(head);
-    else
-    printf("NULL");
-    release(head);
+int main() {
+    ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
+    cin >> n >> k;
+    dfs(1);
     return 0;
 }
