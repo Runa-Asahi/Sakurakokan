@@ -1,0 +1,32 @@
+#include <bits/stdc++.h>
+using namespace std;
+using ll = long long;
+int value(const vector<int>& a,int n) {
+    int total = 0;
+    int current_max = 0;
+    for (int i=1;i<=n;i++) {
+        current_max = max(current_max, a[i]);
+        total += current_max;
+    }
+    return total;
+}
+int main(){
+    ios::sync_with_stdio(0),cin.tie(0),cout.tie(0);
+    int t;cin>>t;
+    while(t--){
+        vector<int> a(60,0);
+        int n;cin>>n;
+        for(int i=1;i<=n;i++){
+            cin>>a[i];
+        }
+        int nmax = value(a,n);
+        for(int i=1;i<=n-1;i++){
+            for(int j=i+1;j<=n;j++){
+                swap(a[i],a[j]);
+                nmax = max(nmax,value(a,n));
+                swap(a[i],a[j]);
+            }
+        }
+        cout<<nmax<<"\n";
+    }
+}
