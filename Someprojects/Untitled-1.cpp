@@ -1,17 +1,38 @@
 #include <bits/stdc++.h>
 using namespace std;
-using ull = unsigned long long;
-ull gcd(ull a, ull b){
-    for( ull i=1;i<=a;i++){
-        ull c = a%b;
-        if(c==0) return b;
-        a = b;
-        b = c;
-    }
-    return 1;
-}
+const int N = 2e5+9;
+int a[N];
+bool vis[N];
 int main(){
-    cout<<gcd(8,12)<<"\n";
-    cout<<gcd(100,75)<<"\n";
-    cout<<gcd(17,13)<<"\n";
+    int t;cin>>t;
+    while(t--){
+        int n;cin>>n;
+        set<int> st;
+        set<int> st1;
+        for(int i=1;i<=n;i++){
+            cin>>a[i];
+        }
+        for(int i=1;i<=n;i++){
+            if(!vis[i]){
+                for(int j=i;j<=n;j*=2){
+                    vis[j] = true;
+                    st.insert(j);
+                    st1.insert(a[j]);
+                }
+                for(auto it:st){
+                    if(st1.find(it)==st1.end()){
+                        cout<<"NO"<<'\n';
+                        goto end;
+                    }
+                }
+                st.clear();
+                st1.clear();
+            }
+        }
+        cout<<"YES"<<'\n';
+        end:
+        for(int i=1;i<=n;i++){
+            vis[i] = false;
+        }
+    }
 }
