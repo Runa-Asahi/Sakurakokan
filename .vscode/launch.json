@@ -1,0 +1,21 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "调试 dfs1",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/dfs1.exe",
+      "externalConsole": true,  // 临时设为 true 以避免控制台问题
+      "MIMode": "gdb",
+      "miDebuggerPath": "D:\\mingw64\\bin\\gdb.exe",
+      "setupCommands": [
+        {
+          "description": "为 gdb 启用整齐打印",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ]
+}
