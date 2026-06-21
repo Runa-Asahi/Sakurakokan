@@ -1,0 +1,1 @@
+{"name":"Local: B2171","url":"c:\\Users\\25686\\Desktop\\kokan\\Sakurakokan\\B2171.cpp","tests":[{"id":1776696872840,"input":"5\n1 2\n1 3\n2 4\n2 5","output":"5 3 1 1 1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\25686\\Desktop\\kokan\\Sakurakokan\\B2171.cpp","group":"local","local":true}

@@ -5,7 +5,7 @@
       "name": "调试 dfs1",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${workspaceFolder}/dfs1.exe",
+      "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
       "externalConsole": true,  // 临时设为 true 以避免控制台问题
       "MIMode": "gdb",
       "miDebuggerPath": "D:\\mingw64\\bin\\gdb.exe",
@@ -15,7 +15,9 @@
           "text": "-enable-pretty-printing",
           "ignoreFailures": true
         }
-      ]
+      ],
+      "cwd": "C:\\Users\\25686\\Desktop\\kokan\\Sakurakokan",
+      "preLaunchTask": "C/C++: gcc build active file"
     }
   ]
 }
